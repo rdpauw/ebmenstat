@@ -1,0 +1,13 @@
+exr:unlabeled-div-1
+fig:error
+fig:stattest
+fig:evidenceladder
+tab:aggr
+tab:cond
+fig:corrs
+tab:corrtab
+tab:tevereden
+intro
+corr
+peason-correlatie-rho
+spearman-correlatie-r_s

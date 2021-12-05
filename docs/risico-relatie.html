@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Risico relatie | EBM &amp; Statistiek III</title>
+  <meta name="description" content="Risico relatie | EBM &amp; Statistiek III" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Risico relatie | EBM &amp; Statistiek III" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Risico relatie | EBM &amp; Statistiek III" />
+  
+  
+  
+
+<meta name="author" content="Robby.DePauw@Ugent.be" />
+
+
+<meta name="date" content="2021-12-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="logregr.html"/>
+<link rel="next" href="inleiding-logistische-regressie.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<script src="libs/font-awesome-5.13.0/js/script.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">EBM & Statistiek III</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Over deze cursus</a>
+<ul>
+<li class="chapter" data-level="" data-path="de-lesgevers.html"><a href="de-lesgevers.html"><i class="fa fa-check"></i>De lesgevers</a></li>
+<li class="chapter" data-level="" data-path="uitprintversie-boek.html"><a href="uitprintversie-boek.html"><i class="fa fa-check"></i>Uitprintversie boek</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introductie</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesetoetsen.html"><a href="hypothesetoetsen.html"><i class="fa fa-check"></i>Hypothesetoetsen</a></li>
+<li class="chapter" data-level="" data-path="fouten-bij-hypothesetoetsen.html"><a href="fouten-bij-hypothesetoetsen.html"><i class="fa fa-check"></i>Fouten bij hypothesetoetsen</a></li>
+<li class="chapter" data-level="" data-path="keuze-statistische-toets.html"><a href="keuze-statistische-toets.html"><i class="fa fa-check"></i>Keuze statistische toets</a></li>
+<li class="chapter" data-level="" data-path="studie-design.html"><a href="studie-design.html"><i class="fa fa-check"></i>Studie design</a></li>
+<li class="chapter" data-level="" data-path="epidemiologie.html"><a href="epidemiologie.html"><i class="fa fa-check"></i>Epidemiologie</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="corr.html"><a href="corr.html"><i class="fa fa-check"></i><b>2</b> Correlaties</a>
+<ul>
+<li class="chapter" data-level="" data-path="inleiding.html"><a href="inleiding.html"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="soorten-correlaties.html"><a href="soorten-correlaties.html"><i class="fa fa-check"></i>Soorten correlaties</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="soorten-correlaties.html"><a href="soorten-correlaties.html#peason-correlatie-rho"><i class="fa fa-check"></i><b>2.0.1</b> Peason correlatie (<span class="math inline">\(\rho\)</span>)</a></li>
+<li class="chapter" data-level="2.0.2" data-path="soorten-correlaties.html"><a href="soorten-correlaties.html#spearman-correlatie-r_s"><i class="fa fa-check"></i><b>2.0.2</b> Spearman correlatie (<span class="math inline">\(r_s\)</span>)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="studie-naar-tevredenheid.html"><a href="studie-naar-tevredenheid.html"><i class="fa fa-check"></i>Studie naar tevredenheid</a></li>
+<li class="chapter" data-level="" data-path="spss.html"><a href="spss.html"><i class="fa fa-check"></i>SPSS</a></li>
+<li class="chapter" data-level="" data-path="oefeningen.html"><a href="oefeningen.html"><i class="fa fa-check"></i>Oefeningen</a></li>
+<li class="chapter" data-level="" data-path="conclusies.html"><a href="conclusies.html"><i class="fa fa-check"></i>Conclusies</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="regr.html"><a href="regr.html"><i class="fa fa-check"></i><b>3</b> Lineare regressie</a>
+<ul>
+<li class="chapter" data-level="" data-path="inleiding-1.html"><a href="inleiding-1.html"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="studie-naar-tevredenheid-1.html"><a href="studie-naar-tevredenheid-1.html"><i class="fa fa-check"></i>Studie naar tevredenheid</a></li>
+<li class="chapter" data-level="" data-path="eigenschappen-van-een-lineair-regressiemodel.html"><a href="eigenschappen-van-een-lineair-regressiemodel.html"><i class="fa fa-check"></i>Eigenschappen van een lineair regressiemodel</a>
+<ul>
+<li class="chapter" data-level="" data-path="eigenschappen-van-een-lineair-regressiemodel.html"><a href="eigenschappen-van-een-lineair-regressiemodel.html#schatten-van-lineaire-regressie"><i class="fa fa-check"></i>Schatten van lineaire regressie</a></li>
+<li class="chapter" data-level="" data-path="eigenschappen-van-een-lineair-regressiemodel.html"><a href="eigenschappen-van-een-lineair-regressiemodel.html#performantie-van-het-regressiemodel"><i class="fa fa-check"></i>Performantie van het regressiemodel</a></li>
+<li class="chapter" data-level="" data-path="eigenschappen-van-een-lineair-regressiemodel.html"><a href="eigenschappen-van-een-lineair-regressiemodel.html#hypothesen"><i class="fa fa-check"></i>Hypothesen</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="voorwaarden-van-een-lineair-regressiemodel.html"><a href="voorwaarden-van-een-lineair-regressiemodel.html"><i class="fa fa-check"></i>Voorwaarden van een lineair regressiemodel</a></li>
+<li class="chapter" data-level="" data-path="selectie-van-een-regressiemodel.html"><a href="selectie-van-een-regressiemodel.html"><i class="fa fa-check"></i>Selectie van een regressiemodel</a></li>
+<li class="chapter" data-level="" data-path="dummy-coding.html"><a href="dummy-coding.html"><i class="fa fa-check"></i>Dummy coding</a></li>
+<li class="chapter" data-level="" data-path="multicollineariteit.html"><a href="multicollineariteit.html"><i class="fa fa-check"></i>Multicollineariteit</a></li>
+<li class="chapter" data-level="" data-path="spss-en-oefeningen.html"><a href="spss-en-oefeningen.html"><i class="fa fa-check"></i>SPSS en oefeningen</a></li>
+<li class="chapter" data-level="" data-path="conclusies-1.html"><a href="conclusies-1.html"><i class="fa fa-check"></i>Conclusies</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="logregr.html"><a href="logregr.html"><i class="fa fa-check"></i><b>4</b> Logistische regressie</a>
+<ul>
+<li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html"><i class="fa fa-check"></i>Risico relatie</a>
+<ul>
+<li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html#risico-en-risico-ratio-rr"><i class="fa fa-check"></i>Risico en risico ratio (RR)</a></li>
+<li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html#odds-en-odds-ratio-or"><i class="fa fa-check"></i>Odds en odds ratio (OR)</a></li>
+<li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html#odds-vs-risico"><i class="fa fa-check"></i>Odds vs Risico</a></li>
+<li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html#hypothese-en-sterkte-risico-relatie"><i class="fa fa-check"></i>Hypothese en sterkte risico-relatie</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inleiding-logistische-regressie.html"><a href="inleiding-logistische-regressie.html"><i class="fa fa-check"></i>Inleiding logistische regressie</a></li>
+<li class="chapter" data-level="" data-path="studie-naar-slaagkansen.html"><a href="studie-naar-slaagkansen.html"><i class="fa fa-check"></i>Studie naar slaagkansen</a></li>
+<li class="chapter" data-level="" data-path="eigenschappen-van-een-logistisch-regressiemodel.html"><a href="eigenschappen-van-een-logistisch-regressiemodel.html"><i class="fa fa-check"></i>Eigenschappen van een logistisch regressiemodel</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="eigenschappen-van-een-logistisch-regressiemodel.html"><a href="eigenschappen-van-een-logistisch-regressiemodel.html#performantie-van-het-regressiemodel-1"><i class="fa fa-check"></i><b>4.0.1</b> Performantie van het regressiemodel</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="spss-en-oefeningen-1.html"><a href="spss-en-oefeningen-1.html"><i class="fa fa-check"></i>SPSS en oefeningen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="multiregr.html"><a href="multiregr.html"><i class="fa fa-check"></i><b>5</b> Meervoudige regressie</a></li>
+<li class="chapter" data-level="6" data-path="exam.html"><a href="exam.html"><i class="fa fa-check"></i><b>6</b> Voorbeeldexamen</a>
+<ul>
+<li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#inleiding-2"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#deel-i"><i class="fa fa-check"></i>DEEL I</a></li>
+<li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#deel-ii"><i class="fa fa-check"></i>DEEL II</a></li>
+<li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#deel-iii"><i class="fa fa-check"></i>DEEL III</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://www.ugent.be" target="blank"><img src="img/ugent.png" width=100></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">EBM &amp; Statistiek III</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="risico-relatie" class="section level2 unnumbered">
+<h2>Risico relatie</h2>
+<p>Een risico op een aandoening kan vaak ingeschat worden als een kans, waarbij we beroep kunnen doen op de <code>prevalentie</code> en <code>incidentie</code>. Wanneer we weten dat de <code>prevalentie</code> van lage rugpijn 50% is, dan is binnen de populatie de kans dat iemand lage rugpijn heeft 50%. De <code>prevalentie</code> (en de <code>incidentie</code>) kan dus gezien worden als een risico op lage rugpijn. Om een risico op een binaire gebeurtenis (waarbij het optreden van bijvoorbeeld lage rugpijn vaak gecodeerd wordt als 1 en het niet optreden van lage rugpijn als 0) statistisch te beschrijven wordt er vaak gebruik gemaakt van twee statistische grootheden, een <code>risico</code> en een <code>odds</code>.</p>
+<div id="risico-en-risico-ratio-rr" class="section level3 unnumbered">
+<h3>Risico en risico ratio (RR)</h3>
+<p>Gegeven is de volgende dataset <code>tevreden</code> met informatie over een bevraging bij kinesitherapeuten over hun tevredenheid van honoraria.</p>
+<ul>
+<li><span class="math inline">\(Y\)</span>: tevredenheid (0-niet tevreden; 1-tevreden)</li>
+<li><span class="math inline">\(X\)</span>: leeftijd (in categorieën)</li>
+</ul>
+<p>We beschikken in deze specifieke steekproef over een totaal van 9 observaties (<span class="math inline">\(n = 10\)</span>).</p>
+<p>de dataset ziet er als volgt uit:</p>
+<table>
+<caption>
+<span id="tab:tevereden3">Table 4.1: </span>Steekproef naar tevredenheid bij kinesitherapeuten.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+X
+</th>
+<th style="text-align:right;">
+Y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>Om het risico op tevredenheid na te gaan (<strong>risico</strong> kan ook een positieve quotatie hebben), dienen we te identificeren hoeveel indivduen aangegeven hebben tevreden te zijn over hun honorarium. In deze studie gaven 5 van de 10 therapeuten aan tevreden te zijn. Het risico (of kans) op tevredenheid is in dit geval dus 50 <span class="math inline">\(\%\)</span>.</p>
+<table>
+<caption>
+<span id="tab:teveredenX">Table 4.2: </span>Kruistabel van tevredenheid.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+0
+</th>
+<th style="text-align:right;">
+1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>Wanneer we het risico in één groep willen uitzetten ten opzichte van een andere groep, kunnen we gebruik maken van het relatieve risico (of risicoratio).</p>
+<div class="dummies">
+<p>De risicoratio wordt vaak verkozen boven bijvoorbeeld het risicoverschil, aangezien een klein risico verschil een grote impact kan hebben wanneer het bijvoorbeeld een zeldzame aandoening gaat. Stel dat we het effect van een therapie willen nagaan bij een zeldzame aandoening (waarbij de prevalentie <span class="math inline">\(2 \%\)</span> is). Wanneer onze therapie in staat is de prevalentie te verlagen naar <span class="math inline">\(1 \%\)</span>, waren we in staat om met onze therapie een verschil te bewerkstelligen van <span class="math inline">\(1 \%\)</span> (risicoverschil). Als we echter kijken naar de risicoratio (relatief risico), dan waren we in staat om de prevalantie te halveren <span class="math inline">\(\frac{1\%}{2\%} = 0.5\)</span>. Wanneer we dezelfde oefening maken voor een ziekte met een hogere prevalentie (<span class="math inline">\(50\%\)</span>), dan is een effect van <span class="math inline">\(1\%\)</span> door therapie nog steeds een effect van <span class="math inline">\(1\%\)</span>, maar het relatieve risico is wel gewijzigd naar <span class="math inline">\(\frac{49\%}{50\%} = 0.98\)</span>. Omwille van deze verschillen wordt er vaak verkozen om risico’s te vergelijken op basis van ratio’s in plaats van verschillen.</p>
+</div>
+<p>Om het verschil in risico op tevredenheid tussen jongere en oudere therapeuten in te schatten, dienen we eerst het risico op tevredenheid in elke groep te berekenen. Voor de jongste groep <code>&lt; 40</code> is het risico <span class="math inline">\(\frac{4}{6} = 66.7 \%\)</span>, terwijl voor de oudere groep <code>40+</code> het risico <span class="math inline">\(\frac{1}{4} = 25.0 \%\)</span> is. De risico ratio of relatieve risico (RR) voor tevredenheid in de jongere t.o.v. de oudere groep kan dan geschat worden door <span class="math inline">\(\frac{0.667}{0.250} = 2.67\)</span>. De RR is direct en letterlijk interpreteerbaar als een toegenomen risico op tevredenheid waarbij het risico bij kinesitherapeuten jonger dan 40 jaar 2.6 keer hoger is dan in de groep 40 jaar of ouder.</p>
+</div>
+<div id="odds-en-odds-ratio-or" class="section level3 unnumbered">
+<h3>Odds en odds ratio (OR)</h3>
+<p>Om de odds en odds ratio (OR) te berekenen gebruiken we dezelfde dataset:</p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-17">Table 4.3: </span>Steekproef naar tevredenheid bij kinesitherapeuten.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+X
+</th>
+<th style="text-align:right;">
+Y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>Om de odds op tevredenheid na te gaan (<strong>odds</strong> kan ook een positieve quotatie hebben), dienen we te identificeren hoeveel indivduen aangegeven hebben tevreden te zijn over hun honorarium. In deze studie gaven 5 van de 10 therapeuten aan tevreden te zijn. Het risico (of kans) op tevredenheid is in dit geval dus 50 <span class="math inline">\(\%\)</span>. De odds is de verhouding van de kans op het plaatsvinden van een gebeurtenis over de kans dat de gebeurtenis niet plaats vind. De odds wordt berekend door <span class="math inline">\(\frac{p}{1-p}\)</span> of <span class="math inline">\(\frac{0.5}{1-0.5} = 1\)</span>. De odds op tevredenheid is in dit voorbeeld is dus <span class="math inline">\(1\)</span>, aangezien de kans op een tevreden kinesitherapeut even groot is als de kans op een ontevreden kinesitherapeut.</p>
+<table>
+<caption>
+<span id="tab:unnamed-chunk-18">Table 4.4: </span>Kruistabel van tevredenheid.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+0
+</th>
+<th style="text-align:right;">
+1
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+&lt; 40
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+40+
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p>Wanneer we de odds in één groep willen uitzetten ten opzichte van een andere groep, kunnen we gebruik maken van de relatieve odds (of odds ratio). Om de OR op tevredenheid van jongere t.o.v. oudere therapeuten in te schatten, dienen we eerst de odds op tevredenheid in elke groep te berekenen. Voor de jongste groep <code>&lt; 40</code> is de odds <span class="math inline">\(\frac{4/6}{2/6} = \frac{4}{2} = 2.00\)</span>, terwijl voor de oudere groep <code>40+</code> de odds <span class="math inline">\(\frac{1/4}{3/4} = \frac{1}{3} = 0.33\)</span> is. De odds ratio (OR) voor tevredenheid in de jongere t.o.v. de oudere groep kan dan geschat worden door <span class="math inline">\(\frac{2.00}{0.33} = 6.1\)</span>. De OR is moeilijk en niet letterlijk interpreteerbaar aangezien het weergeeft dat de odds bij kinesitherapeuten jonger dan 40 jaar 6.1 keer hoger zijn dan in de groep 40 jaar of ouder.</p>
+</div>
+<div id="odds-vs-risico" class="section level3 unnumbered">
+<h3>Odds vs Risico</h3>
+<p>De OR geeft is stabiel en verondersteld geen oorzaak-gevolg relatie, terwijl de RR verandert wanneer rijen en kollomen (oorzaak-gevolg) verwisseld worden.</p>
+</div>
+<div id="hypothese-en-sterkte-risico-relatie" class="section level3 unnumbered">
+<h3>Hypothese en sterkte risico-relatie</h3>
+<p>De hypothese van een OR of RR wordt als volgt geformuleerd:</p>
+<p><span class="math inline">\(H_0\)</span>: Leeftijd is geen risicofactor (RR of OR <span class="math inline">\(=\)</span> 1) gerelateerd aan de tevredenheid van de therapeut.
+<span class="math inline">\(H_1\)</span>: Leeftijd is geen risicofactor (RR of OR <span class="math inline">\(\neq\)</span> 1) gerelateerd aan de tevredenheid van de therapeut.</p>
+<p>Een significante risicofactor, wil dus zeggen significant verschillend van 1. Belangrijk om te vermelden is dat een OR (of een RR) <span class="math inline">\(&gt;\)</span> 1 een hoger risico inhoudt ten opzichte van de referentiecategorie. Een OR (of een RR) <span class="math inline">\(&lt;\)</span> 1 houdt een lager risico in ten opzichte van de referentiecategorie. Alle ORs (of RRs) groter dan (kleiner dan) één kunnen onderling vergeleken worden qua grootte, maar RRs (of ORs) groter dan één kunnen niet vergeleken met RRs (of ORs) kleiner dan één. Wanneer we de odds ratio’s berekenen van risicofactoren voor blessures bij sporters, vinden we een <span class="math inline">\(OR_{geslacht:man} = 2\)</span> en een <span class="math inline">\(OR_{geen \space opwarming} = 8\)</span>, dan kunnen we besluiten dat het risico gerelateerd aan een opwarming groter is dan het risico gerelateerd aan geslacht, aangezien <span class="math inline">\(8 &gt; 2\)</span>.</p>
+<p>We kunnen de referentiecategorie omdraaien voor een OR of RR door de inverse te berekenen (vb. <span class="math inline">\(\frac{1}{OR}\)</span> of <span class="math inline">\(\frac{1}{RR}\)</span>). Zo kan de OR voor geen opwarming versus een opwarming gelijk zijn aan 8 (<span class="math inline">\(OR_{geen \space opwarming} = 8\)</span>), dan is de OR voor een opwarming tegenover geen opwarming: <span class="math inline">\(OR_{opwarming} = \frac{1}{8} = 0.125\)</span>. Deze nieuwe OR is zoals in voorgaand voorbeeld moeilijk te vergelijken met de <span class="math inline">\(OR_{geslacht:man} = 2\)</span>, aangezien <span class="math inline">\(0.125 &lt; 2\)</span>, maar het risico gerelateerd aan opwarming aanzienlijk groter is.</p>
+<div class="dummies">
+<p>De odds, OR en RR wordt vaak weergegeven na een log-bewerking (met het natuurlijke logaritme: ln). Deze worden dan de log(odds), log(OR) or log(RR), aangezien we door deze transformatie een normaal verdeling van de uitkomst kunnen krijgen.</p>
+<p><img src="ugent-ebmstatIII_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="logregr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inleiding-logistische-regressie.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["ugent-ebmstatIII.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"depth": 2,
+"scroll_highlight": true
+},
+"smart": false,
+"highlight": "pygments",
+"df_print": "kable"
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

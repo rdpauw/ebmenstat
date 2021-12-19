@@ -6,7 +6,7 @@
 ]{book}
 \title{EBM \& Statistiek III}
 \author{\href{mailto:Robby.DePauw@Ugent.be}{\nolinkurl{Robby.DePauw@Ugent.be}}}
-\date{2021-12-05}
+\date{2021-12-19}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -45,6 +45,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -140,6 +180,12 @@ Voor vragen over het stuk statistiek kunnen jullie steeds mailen naar \href{mail
 
 
 Bovenaan de balk van deze website kunnen jullie een pdf-versie van dit boek downloaden.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{asis\_output}\NormalTok{(}\StringTok{\textquotesingle{}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{mainmatter}\SpecialCharTok{\textbackslash{}n\textbackslash{}n}\StringTok{\textquotesingle{}}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \mainmatter
 
@@ -453,7 +499,7 @@ In dit onderdeel vinden jullie alle oefeningen over correlaties en associatiatie
 
 \begin{exercise}
 
-Binnen een onderzoek naar het oplopen van lestel bij sporters, zijn onderzoekers op zoek gegaan naar mogelijke risicofactoren. Ze includeerde 10 sporters, allemaal met een leeftijd van 15 jaar en noteerden de volgende aantal letsels: 5, 0, 0, 2, 2, 3, 1, 2, 1, 0. De onderzoekers waren geïntereseerd in het verband tussen leeftijd en het anatal letsels. Welke van onderstaande stellingen is WAAR:
+Binnen een onderzoek naar het oplopen van letsel bij sporters, zijn onderzoekers op zoek gegaan naar mogelijke risicofactoren. Ze includeerde 10 sporters, allemaal met een leeftijd van 15 jaar en noteerden de volgende aantal letsels: 5, 0, 0, 2, 2, 3, 1, 2, 1, 0. De onderzoekers waren geïnteresseerd in het verband tussen leeftijd en het aantal letsels. Welke van onderstaande stellingen is WAAR:
 
 \begin{itemize}
 \tightlist
@@ -483,21 +529,11 @@ Een correlatie kunnen we steeds weergeven aan de hand van een lijn.
 
 \end{exercise}
 
-\begin{exercise}
+De volgende oefeningen zijn gebaseerd op de volgende klinische studie:
 
-Een correlatie kunnen we steeds weergeven aan de hand van een lijn.
-
-\begin{itemize}
-\tightlist
-\item
-  Waar
-\item
-  Onwaar
-\end{itemize}
-
-\end{exercise}
-
-Alle volgende oefeningen hebben te maken met volgende klinische studie: \textgreater In een cross-sectionele studie wordt er onderzoek gedaan naar het verband tussen valrisico bij ouderen en de Timed Up and Go (TUG) test. In het totaal zijn er 15 deelnemers binnen de studie waarbij de TUG test wordt afgenomen en de tijd (in s) wordt opgenomen. Verder wordt er bij elke deelnemer ook bevraagd hoevaak ze gevallen zijn het afgelopen jaar.
+\begin{quote}
+In een cross-sectionele studie wordt er onderzoek gedaan naar het verband tussen valrisico bij ouderen en de Timed Up and Go (TUG) test. In het totaal zijn er 15 deelnemers binnen de studie waarbij de TUG test wordt afgenomen en de tijd (in s) wordt opgenomen. Verder wordt er bij elke deelnemer ook bevraagd hoevaak ze gevallen zijn het afgelopen jaar.
+\end{quote}
 
 In onderstaande tabel \ref{tab:TUG} vinden jullie de resultaten van deze studie. Voer deze gegevens ook in binnen de DATA omgeving van {SPSS} en gebruik het programma waar nodig.
 
@@ -507,7 +543,7 @@ In onderstaande tabel \ref{tab:TUG} vinden jullie de resultaten van deze studie.
 \centering
 \begin{tabular}[t]{rr}
 \toprule
-vallen & TUG (s)\\
+Aantal keer gevallen & TUG (s)\\
 \midrule
 0 & 9.69\\
 4 & 17.38\\
@@ -545,7 +581,7 @@ Binnen deze studie zullen we kunnen aantonen dat de tijd voor het uitvoeren van 
 \end{exercise}
 
 \begin{exercise}
-Welke grafiek past het best voor een visualizatie van deze gegevens?
+Welke grafiek past het best voor een visualisatie van deze gegevens?
 \end{exercise}
 
 \begin{exercise}
@@ -1498,26 +1534,27 @@ De observaties zijn steeds de referentie. In bovenstaande tabel worden deze weer
 
 In dit deel kunnen jullie voor het eerst kennis maken met binair logistische regressie binnen het statistisch softwareprogramma SPSS. Probeer op een gestructureerde manier alle stappen in dit document te volgen en hierna ook de vragen te beantwoorden.
 
-Als kinesitherapeut binnen een sportclub wil je een blessurepreventieprogramma opstarten. Je gaat van slag met het aanmaken van een testbatterij waarin kracht, lenigheid en psychologisch welzijn gemeten wordt. Wanneer de testbatterij positief scoort, dan is er een verhoogd risico op een blessure. In je studie neem je bij het begin van het seizoen bij iedereen deze testbatterij af en je volgt alle spelers op gedurende het volledige seizon.
+Als kinesitherapeut binnen een sportclub wil je een preventieprogramma opstarten. Je gaat van slag met het aanmaken van een testbatterij waarin kracht, lenigheid en psychologisch welzijn gemeten wordt. Wanneer de testbatterij positief scoort, dan is er een verhoogd risico op een blessure. In je studie neem je bij het begin van het seizoen bij iedereen deze testbatterij af en je volgt alle spelers op gedurende het volledige seizoen.
 
 \begin{table}
 
 \caption{\label{tab:unnamed-chunk-23}Overzicht van data binnen de sportclub}
 \centering
-\begin{tabular}[t]{rr}
+\begin{tabular}[t]{lr}
 \toprule
-BMI (kg/m2) & 6MWT (meter)\\
+Testbatterij & Blessure\\
 \midrule
-23 & 120\\
-28 & 108\\
-26 & 105\\
-22 & 115\\
-31 & 95\\
+pos & 0\\
+pos & 1\\
+neg & 0\\
+neg & 0\\
+neg & 0\\
 \addlinespace
-26 & 95\\
-32 & 82\\
-36 & 87\\
-42 & 40\\
+pos & 1\\
+neg & 1\\
+neg & 0\\
+neg & 0\\
+pos & 0\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1567,13 +1604,171 @@ Is er een significant verband tussen de leeftijd en de score voor tevredenheid? 
 \end{exercise}
 
 \begin{exercise}
-Wat valt er op aan het model? Denkl je dat het hier om een valide model gaat? Of zijn er eventuele problemen die we moeten aanpakken? Indien er problemen zijn, kan je dan opmerken waaraan deze problemen kunnen liggen?
+Wat valt er op aan het model? Denk je dat het hier om een valide model gaat? Of zijn er eventuele problemen die we moeten aanpakken? Indien er problemen zijn, kan je dan opmerken waaraan deze problemen kunnen liggen?
 \end{exercise}
 
 \mainmatter
 
 \hypertarget{multiregr}{%
 \chapter{Meervoudige regressie}\label{multiregr}}
+
+\hypertarget{inleiding-2}{%
+\section*{Inleiding}\label{inleiding-2}}
+
+
+Voorgaande hoofdstukken waren vooral gefocust op een regressievergelijking, waarbij de afhankelijke uitkomst (\(Y\)) wordt verklaard aan de hand van één onafhankelijke factor (\(X\)). Uiteraard weten we dat er in werkelijkheid vaak meer dan één factor gerelateerd zal zijn aan de uitkomst.
+
+\textbf{Voorbeeld:} Wanneer we een idee willen hebben over het functioneren van een patiënt 3 jaar na het plaatsen van een totale heupprothese. Hiervoor kunnen we gebruik maken van een WOMAC score. Bij enkelvoudige regressie kunnen we focussen op het verband tussen deze WOMAC-score en bijvoorbeeld de leeftijd. Bij meervoudige regressie willen we echter ook rekening houden met andere factoren, zoals het geslacht, maar ook misschien het BMI of het al dan niet ervaren van comorbiditeiten. We bouwen hierbij nog steeds één model, dat al deze factoren omvat.
+
+Meervoudige regressie (zowel lineair als binair) wordt dus vooral gebruikt in de volgende context: * Meenemen van covariaten * Nagaan van interacties * \ldots{}
+
+Een \textbf{nadeel} van meervoudige regressie is dat het meenemen van meer variabelen vaak gepaard gaat met de nood aan een grotere steekproef.
+
+\hypertarget{visualizatie}{%
+\section*{Visualizatie}\label{visualizatie}}
+
+
+Een manier om een regressiemodel te visualiseren is de Directed acyclic graph (DAG), hierbij worden factoren aan elkaar gerelateerd door pijlen. Een voorbeeld hiervan is weergegeven in figuur \ref{fig:dag1}. Hierbij merken we op dat er een pijl wordt getrokken van de exposure (blootstelling) naar de outcome (uitkomst). De DAG wil hiermee visualiseren dat er een theoretische invloed is van een bepaalde blootstelling (bv. de leeftijd) op een bepaalde uitkomst (bv. spierkracht). Een belangrijke \textbf{opmerkingen} hierbij is dat de pijl een theoretisch concept is, waarbij er veronderstelt wordt dat er een invloed is van één factor op de andere. Uiteraard weten we dat zo een oorzaak-gevolg relatie alleen duidelijk kan worden in een gerandomiseerde studie. Bij observationele studie zonder randomisatie, stelt de pijl eerder een `associatie' voor.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/dag1} \caption{Voorbeeld van DAG}\label{fig:dag1}
+\end{figure}
+
+Wanneer we het principe van de DAG gaan toepassen op basis van de studieresultaten die werden weergegeven in figuur \ref{fig:dag3}, krijgen we een DAG zoals weergegeven in figuur \ref{fig:dag2}. Het is belangrijk om te vermelden dat we ons ook bij een meervoudig regressiemodel, focussen op één van de opgenomen factoren (in dit geval de leeftijd). Het meervoudige regressiemodel is weergegeven in de rechterkolom van figuur \ref{fig:dag3}. Dit is aangegeven in de titel van de tabel dor het woord \textbf{multivariate}. We merken dat er drie factoren werden opgenomen, namelijk leeftijd, het al dan niet hebben van lage rugpijn en kwaliteit van leven (SF-36).
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/dag3} \caption{Studie naar WOMAC}\label{fig:dag3}
+\end{figure}
+
+Binnen de DAG zoals weergegeven in figuur \ref{fig:dag2}, werd er gefocust op de relatie tussen { de leeftijd en WOMAC score }. Verder werd deze relatie binnen het meervoudige regressiemodel gecorrigeerd voor { het hebben van lage rugpijn } en { kwaliteit van leven }. De relatie tussen leeftijd en WOMAC wordt m.a.w. gecorrigeerd voor andere covariaten (soms ook benoemd als confounding of vervuilende variabelen). We kunnen deze oefening herhalen voor elk van de relaties binnen het meervoudige regressiemodel.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/dag2} \caption{DAG voor WOMAC-studie}\label{fig:dag2}
+\end{figure}
+
+\hypertarget{terminologie}{%
+\section*{Terminologie}\label{terminologie}}
+
+
+Vooraleer gebruik te maken van zo'n DAGs is het belangrijk om op de hoogte te zijn van de terminologie. In de eerste plaats is het belangrijk een onderscheid te maken tussen een \textbf{collider} en een \textbf{confounder}. Een \textbf{collider} ontstaan wanneer in werkelijkheid 2 factoren de onderliggende oorzaak zijn van een andere factor zoals weergegeven in figuur \ref{fig:dag4}. Wanneer we in ons model zouden corrigeren voor een \textbf{collider}, dan ontstaat er net bias.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/dag4} \caption{Voorbeeld van DAG}\label{fig:dag4}
+\end{figure}
+
+Een concreet voorbeeld van zo'n \textbf{collider} bias is de obesitas paradox. In deze paradox lijkt het alsof obesitas zorgt voor een verlaagde mortaliteit bij patiënten met een cardiovasculaire aandoening. Wanneer we dus obesitas samen met een cardiovasculaire aandoening in één model, ontstaat er collider bias. Het is namelijk zo dat binnen de groep van patiënten met zo'n aandoening, dat deze patiënten - wanneer ze opgenomen worden in het ziekenhuis - langer lijken te overleven. Wanneer we echter kijken binnen de volledige populatie, is het duidelijk dat obesitas leidt tot een verhoogde sterfte. Mensen met obesitas hebben misschien wel meer reserves, waardoor hun overlevingstijd langer wordt wanneer we enkel kijken naar de mensen die leiden aan andere aandoeningen. \textbf{Belangrijk} hierbij is te weten dat het opnemen van covariaten dus niet steeds leidt tot het corrigeren van een relatie.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/dag5} \caption{Terminologie van een DAG}\label{fig:dag5}
+\end{figure}
+
+Binnen de DAG die weergegeven is in figuur @ref(fig: dag5) worden de verschillende relatie weergegeven:
+
+\begin{itemize}
+\tightlist
+\item
+  {Directe effect}: deze geeft het directe effect weer van het geven van een therapie op het oplopen van blessures.
+\item
+  {Moderatie}: een modererende factor is een factor die een invloed heeft op de relatie tussen twee factoren.
+\item
+  {Mediatie}: een mediërende factor is een factor die onrechtstreeks een invloed weergeeft tussen twee factoren. Deze worden ook indirecte effecten genoemd.
+\end{itemize}
+
+In het voorbeeld, wordt het directe effect weergegeven door een direct effect van de therapie op het al dan niet oplopen van blessures. De mediator in dit voorbeeld is zelfzeker zijn. De therapie kan immers ervoor zorgen dat de sporter zijn zelfzekerheid veranderd (toeneemt of afneemt) wat ook een effect kan hebben op het al dan niet oplopen van blessures. Tot slot is er de leeftijd als moderator. Het is immers zo dat mensen met een oudere leeftijd misschien minder effect hebben van de therapie in vergelijking met jongeren. De leeftijd heeft dus een invloed op het effect van de therapie. Deze modererende effecten worden in een model vaak geschat op basis van een interactie-effect.
+
+\hypertarget{toepassingen-dag}{%
+\section*{Toepassingen DAG}\label{toepassingen-dag}}
+
+
+In een gerandomiseerde studie vonden de onderzoekers een positief effect van kinesitherapie op kwaliteit van leven bij patiënten na een knie-prothese. Binnen deze studie werd er gevonden dat de effectiviteit veel hoger lag bij jongere patiënten ten opzichte van oudere patiënten.
+
+Hoe kunnen we de rol van leeftijd definiëren? \emph{Leeftijd} is in dit geval een moderator.
+
+In een gerandomiseerde studie vonden de onderzoekers een positief effect van kinesitherapie op kwaliteit van leven bij patiënten na een knie-prothese. Binnen deze studie werd er gevonden dat de effectiviteit veel hoger lag bij jongere patiënten ten opzichte van oudere patiënten.
+
+Moeten we corrigeren voor geslacht in deze studie wanneer we weten dat geslacht een mogelijke confounder is? \emph{Eigenlijk niet}, aangezien de studie gerandomiseerd is. Randomisatie wil zeggen dat de therapie enkel gebaseerd is op toeval en er geen factoren zijn die van invloed kunnen zijn op de therapie.
+
+In een niet-gerandomiserde studie vonden de onderzoekers een positief effect van kinesitherapie op kwaliteit van leven bij patiënten na een knie-prothese. Binnen deze studie werd er gevonden dat de effectiviteit veel hoger lag bij jongere patiënten ten opzichte van oudere patiënten. Belangrijke confounders zijn geslacht en mate kan kinesiofobie.
+
+Hoe zou een DAG eruit zien? \emph{Zie figuur \ref{fig:dag6}}
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/dag6} \caption{DAG}\label{fig:dag6}
+\end{figure}
+
+\hypertarget{meervoudige-regressie}{%
+\section*{Meervoudige regressie}\label{meervoudige-regressie}}
+
+
+Een meervoudig lineair regressiemodel wordt weergegeven aan de hand van \(Y = \beta_0 + \beta_1X_1 + \beta_2X_2+...+\epsilon\). Binnen deze regressievergelijking kunnen we confounder opnemen en kunnen we ook interactie-effecten (moderatie) opnemen, maar geen mediatie.
+
+\hypertarget{confounder}{%
+\subsection*{Confounder}\label{confounder}}
+
+
+Een voorbeeld van de interpretatie van een regressiemodel wanneer we confounder opnemen is als volgt:
+
+Meervoudige regressie: opnemen van meerdere factoren \textgreater\textgreater{} correctie van het effect voor de andere factoren.
+
+\(Tevredenheid = \beta_0 + \beta_1 \times leeftijd + \beta_2 \times geslacht(man)\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\beta_1\) = inschatting van het effect van leeftijd op tevredenheid gecorrigeerd voor geslacht.
+\item
+  \(\beta_2\) = inschatting van het effect van geslacht op tevredenheid gecorrigeerd voor leeftijd.
+\end{itemize}
+
+\hypertarget{moderatie}{%
+\subsection*{Moderatie}\label{moderatie}}
+
+
+Bij een moderatie-analyse wordt er gebruik gemaakt van interacties. Een interactie wordt als volgt weergegeven in een regressievergelijking:
+
+\(Y = \beta_0 + \beta_1 \times X_1 + \beta_2 \times X_2 + \beta_3 \times X_1 \times X_2 + \epsilon\)
+
+\(\beta_3\) geeft in deze formule de interactie weer tussen \(X_1\) en \(X_2\). De interpretatie van \(\beta_3\) is echter moeilijk op basis van bovenstaande formule. WAnneer we deze formule herschrijven als
+
+\(Y = \beta_0 + \beta_2 \times X_2 + (\beta_1 + \beta_3 \times X_1) \times X_2 + \epsilon\),
+
+kunnen we heft effect van deze \(\beta_3\) beter evalueren. De associatie tussen \(Y\) en \(X_2\) wordt nu weergegeven door \((\beta_1 + \beta_3 \times X_1)\), waarbij de associatie:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\beta_1 + \beta_3\) is wanneer \(X_1 = 1\)
+\item
+  \(\beta_1\) is wanneer \(X_1 = 0\)
+\end{itemize}
+
+Stel dat \(Y = tevredenheid\), \(X_1 = leeftijd\) en \(X_2 = geslacht\). Wanneer er bij mannen een toename zou zijn in tevredenheid bij een stijgende leeftijd en bij vrouwen een afname in tevredenheid bij een stijgende leeftijd, dan is er een interactie-effect, waarbij \(\beta_3\) significant zal zijn.
+
+Een visuele weergave van een interactie-effect is terug te vinden in figuur \ref{fig:int1}. Zwart geeft de associatie weer voor vrouwen, terwijl lichtgrijs de assocaitie weergeeft voor mannen.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{img/interactie1} \caption{DAG}\label{fig:int1}
+\end{figure}
+
+We kunnen intreactie of moderatie-effecten gebruiken voor alle combinaties van variabelen:
+
+\begin{itemize}
+\tightlist
+\item
+  categrosch x categorisch
+\item
+  categorisch x continu
+\item
+  continu x continu
+\end{itemize}
+
+\hypertarget{selectie-van-het-meest-passende-regressiemodel}{%
+\section*{Selectie van het meest passende regressiemodel}\label{selectie-van-het-meest-passende-regressiemodel}}
+
+
+Lineaire regressie: * \(R^2\) (determinatiecoëfficiënt) moet zo hoog mogelijk zijn * Geweten confounders * Significantie van de variabelen in het model
+
+Logistische regressie: * Naglekerke's \(R^2\) (determinatiecoëfficiënt) moet zo hoog mogelijk zijn * Geweten confounders * Significantie van de variabelen in het model * Zo hoog mogelijk: Acc, Se of Sp.
 
 \mainmatter
 
@@ -1582,8 +1777,8 @@ Wat valt er op aan het model? Denkl je dat het hier om een valide model gaat? Of
 
 Om dit voorbeeld examen te kunnen maken dien je te beschikken over een SPSS (.sav) dataset. Om deze dataset te downloaden kan je op volgende knop duwen:
 
-\hypertarget{inleiding-2}{%
-\subsection*{Inleiding}\label{inleiding-2}}
+\hypertarget{inleiding-3}{%
+\subsection*{Inleiding}\label{inleiding-3}}
 
 
 Dit voorbeeldexamen geeft een reële indruk van de verwachtingen op het examen met betrekking tot jullie kennis en vaardigheden binnen SPSS. Aan de hand van deze vragen, zouden jullie in staat moeten zijn om alle vragen binnen dit voorbeeld examen op te lossen. Zoals jullie zien, zal het examen bestaan uit drie delen: (1) een praktisch deel waar jullie aan de slag kunnen gaan met SPSS en (2) een praktisch deel met fragmenten uit een artikel dat jullie dienen te interpreteren en (3) een laatste deel met enkele korte theoretische vragen over de geziene stof. Als alles goed gaat, zouden jullie in staat moeten zijn om dit voorbeeld examen binnen het uur op te lossen.

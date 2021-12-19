@@ -107,6 +107,14 @@ div.exercise pre code {
 div.example {
   margin-bottom: 20px;
 }
+
+div.voorbeeld {
+  padding: 1em 1em 1em 1em;
+  margin-bottom: 10px;
+  background: #E85E71 5px center/3em no-repeat;
+  color: #ffffff;
+}
+
 div.warning code {
   background-color: #f8d7da !important;
 }

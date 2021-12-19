@@ -24,15 +24,15 @@
 <meta name="author" content="Robby.DePauw@Ugent.be" />
 
 
-<meta name="date" content="2021-12-05" />
+<meta name="date" content="2021-12-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="risico-relatie.html"/>
-<link rel="next" href="studie-naar-slaagkansen.html"/>
+<link rel="prev" href="multiregr.html"/>
+<link rel="next" href="visualizatie.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -168,11 +168,27 @@
 <li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html#odds-vs-risico"><i class="fa fa-check"></i>Odds vs Risico</a></li>
 <li class="chapter" data-level="" data-path="risico-relatie.html"><a href="risico-relatie.html#hypothese-en-sterkte-risico-relatie"><i class="fa fa-check"></i>Hypothese en sterkte risico-relatie</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="inleiding-2.html"><a href="inleiding-2.html"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="inleiding-logistische-regressie.html"><a href="inleiding-logistische-regressie.html"><i class="fa fa-check"></i>Inleiding logistische regressie</a></li>
 <li class="chapter" data-level="" data-path="studie-naar-slaagkansen.html"><a href="studie-naar-slaagkansen.html"><i class="fa fa-check"></i>Studie naar slaagkansen</a></li>
+<li class="chapter" data-level="" data-path="eigenschappen-van-een-logistisch-regressiemodel.html"><a href="eigenschappen-van-een-logistisch-regressiemodel.html"><i class="fa fa-check"></i>Eigenschappen van een logistisch regressiemodel</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="eigenschappen-van-een-logistisch-regressiemodel.html"><a href="eigenschappen-van-een-logistisch-regressiemodel.html#performantie-van-het-regressiemodel-1"><i class="fa fa-check"></i><b>4.0.1</b> Performantie van het regressiemodel</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="spss-en-oefeningen-1.html"><a href="spss-en-oefeningen-1.html"><i class="fa fa-check"></i>SPSS en oefeningen</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="multiregr.html"><a href="multiregr.html"><i class="fa fa-check"></i><b>5</b> Meervoudige regressie</a></li>
+<li class="chapter" data-level="5" data-path="multiregr.html"><a href="multiregr.html"><i class="fa fa-check"></i><b>5</b> Meervoudige regressie</a>
+<ul>
+<li class="chapter" data-level="" data-path="inleiding-2.html"><a href="inleiding-2.html"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="visualizatie.html"><a href="visualizatie.html"><i class="fa fa-check"></i>Visualizatie</a></li>
+<li class="chapter" data-level="" data-path="terminologie.html"><a href="terminologie.html"><i class="fa fa-check"></i>Terminologie</a></li>
+<li class="chapter" data-level="" data-path="toepassingen-dag.html"><a href="toepassingen-dag.html"><i class="fa fa-check"></i>Toepassingen DAG</a></li>
+<li class="chapter" data-level="" data-path="meervoudige-regressie.html"><a href="meervoudige-regressie.html"><i class="fa fa-check"></i>Meervoudige regressie</a>
+<ul>
+<li class="chapter" data-level="" data-path="meervoudige-regressie.html"><a href="meervoudige-regressie.html#confounder"><i class="fa fa-check"></i>Confounder</a></li>
+<li class="chapter" data-level="" data-path="meervoudige-regressie.html"><a href="meervoudige-regressie.html#moderatie"><i class="fa fa-check"></i>Moderatie</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="selectie-van-het-meest-passende-regressiemodel.html"><a href="selectie-van-het-meest-passende-regressiemodel.html"><i class="fa fa-check"></i>Selectie van het meest passende regressiemodel</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="exam.html"><a href="exam.html"><i class="fa fa-check"></i><b>6</b> Voorbeeldexamen</a>
 <ul>
 <li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#inleiding-3"><i class="fa fa-check"></i>Inleiding</a></li>
@@ -203,31 +219,24 @@
             <section class="normal" id="section-">
 <div id="inleiding-2" class="section level2 unnumbered">
 <h2>Inleiding</h2>
-<p>Binaire logistische regressie kan zowel toegepast worden in een cross-sectioneel design als prospectieve cohorte en wordt vaak gebruikt voor volgende doelstellingen:</p>
-<ul>
-<li>Het voorspellen van een uitkomstmaat op basis van één of meerdere factoren.</li>
-<li>Het beschrijven van een verband tussen de uitkomstmaat en andere factoren, waarbij rekening wordt gehouden met verstorende variabelen.</li>
-</ul>
-<p>In essentie is een logistisch regressie model opgebouwd uit twee componenten:</p>
-<ul>
-<li>De afhankelijke uitkomstvariabele (<span class="math inline">\(Y\)</span>), welke een categorische variabele dient te zijn.</li>
-<li>De onafhankelijke variabele(n) (<span class="math inline">\(X\)</span>), welke zowel continu als categorisch van aard kunnen zijn.</li>
-</ul>
-<p>In de regressievergelijking wordt <span class="math inline">\(Y\)</span> niet rechtstreeks gemodelleerd, maar de kans op het optreden van <span class="math inline">\(Y = 1\)</span>, welke uitgedrukt wordt als <span class="math inline">\(p = P(Y=1)\)</span>.</p>
-<p><span class="math inline">\(logit(p) = \beta_0 + \beta_1 X_1\)</span></p>
-<p>Wanneer er slechts één onafhankelijke variabele <span class="math inline">\(X_1\)</span> spreken we van een enkelvoudig binair logistisch regressiemodel. Indien er meerdere onafhankelijke variabelen <span class="math inline">\(X_1, X_2, X_3,..., X_i\)</span> spreken we van een meervoudig binair logistisch regressiemodel.</p>
-<div class="dummies">
-<p><strong>Een regressiemodel</strong> bestaat uit twee delen, een afhankelijk deel (de uitkomst of wat er geschat moet worden) en een onafhankelijk deel (de verklarende variabelen).</p>
+<p>Voorgaande hoofdstukken waren vooral gefocust op een regressievergelijking, waarbij de afhankelijke uitkomst (<span class="math inline">\(Y\)</span>) wordt verklaard aan de hand van één onafhankelijke factor (<span class="math inline">\(X\)</span>). Uiteraard weten we dat er in werkelijkheid vaak meer dan één factor gerelateerd zal zijn aan de uitkomst.</p>
+<div class="voorbeeld">
+<p><strong>Voorbeeld:</strong>
+Wanneer we een idee willen hebben over het functioneren van een patiënt 3 jaar na het plaatsen van een totale heupprothese. Hiervoor kunnen we gebruik maken van een WOMAC score. Bij enkelvoudige regressie kunnen we focussen op het verband tussen deze WOMAC-score en bijvoorbeeld de leeftijd. Bij meervoudige regressie willen we echter ook rekening houden met andere factoren, zoals het geslacht, maar ook misschien het BMI of het al dan niet ervaren van comorbiditeiten. We bouwen hierbij nog steeds één model, dat al deze factoren omvat.</p>
 </div>
-<p>De logit-functie komt overeen met de log-odds: <span class="math inline">\(logit(p) = log(odds) = log(\frac{p}{1-p})\)</span>.</p>
+<p>Meervoudige regressie (zowel lineair als binair) wordt dus vooral gebruikt in de volgende context:
+* Meenemen van covariaten
+* Nagaan van interacties
+* …</p>
+<p>Een <strong>nadeel</strong> van meervoudige regressie is dat het meenemen van meer variabelen vaak gepaard gaat met de nood aan een grotere steekproef.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="risico-relatie.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="studie-naar-slaagkansen.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="multiregr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualizatie.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

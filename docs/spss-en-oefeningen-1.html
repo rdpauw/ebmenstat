@@ -24,7 +24,7 @@
 <meta name="author" content="Robby.DePauw@Ugent.be" />
 
 
-<meta name="date" content="2021-12-05" />
+<meta name="date" content="2021-12-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -176,10 +176,22 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="spss-en-oefeningen-1.html"><a href="spss-en-oefeningen-1.html"><i class="fa fa-check"></i>SPSS en oefeningen</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="multiregr.html"><a href="multiregr.html"><i class="fa fa-check"></i><b>5</b> Meervoudige regressie</a></li>
+<li class="chapter" data-level="5" data-path="multiregr.html"><a href="multiregr.html"><i class="fa fa-check"></i><b>5</b> Meervoudige regressie</a>
+<ul>
+<li class="chapter" data-level="" data-path="inleiding-2.html"><a href="inleiding-2.html"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="visualizatie.html"><a href="visualizatie.html"><i class="fa fa-check"></i>Visualizatie</a></li>
+<li class="chapter" data-level="" data-path="terminologie.html"><a href="terminologie.html"><i class="fa fa-check"></i>Terminologie</a></li>
+<li class="chapter" data-level="" data-path="toepassingen-dag.html"><a href="toepassingen-dag.html"><i class="fa fa-check"></i>Toepassingen DAG</a></li>
+<li class="chapter" data-level="" data-path="meervoudige-regressie.html"><a href="meervoudige-regressie.html"><i class="fa fa-check"></i>Meervoudige regressie</a>
+<ul>
+<li class="chapter" data-level="" data-path="meervoudige-regressie.html"><a href="meervoudige-regressie.html#confounder"><i class="fa fa-check"></i>Confounder</a></li>
+<li class="chapter" data-level="" data-path="meervoudige-regressie.html"><a href="meervoudige-regressie.html#moderatie"><i class="fa fa-check"></i>Moderatie</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="selectie-van-het-meest-passende-regressiemodel.html"><a href="selectie-van-het-meest-passende-regressiemodel.html"><i class="fa fa-check"></i>Selectie van het meest passende regressiemodel</a></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="exam.html"><a href="exam.html"><i class="fa fa-check"></i><b>6</b> Voorbeeldexamen</a>
 <ul>
-<li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#inleiding-2"><i class="fa fa-check"></i>Inleiding</a></li>
+<li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#inleiding-3"><i class="fa fa-check"></i>Inleiding</a></li>
 <li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#deel-i"><i class="fa fa-check"></i>DEEL I</a></li>
 <li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#deel-ii"><i class="fa fa-check"></i>DEEL II</a></li>
 <li class="chapter" data-level="" data-path="exam.html"><a href="exam.html#deel-iii"><i class="fa fa-check"></i>DEEL III</a></li>
@@ -208,107 +220,115 @@
 <div id="spss-en-oefeningen-1" class="section level2 unnumbered">
 <h2>SPSS en oefeningen</h2>
 <p>In dit deel kunnen jullie voor het eerst kennis maken met binair logistische regressie binnen het statistisch softwareprogramma SPSS. Probeer op een gestructureerde manier alle stappen in dit document te volgen en hierna ook de vragen te beantwoorden.</p>
-<p>Als kinesitherapeut binnen een sportclub wil je een blessurepreventieprogramma opstarten. Je gaat van slag met het aanmaken van een testbatterij waarin kracht, lenigheid en psychologisch welzijn gemeten wordt. Wanneer de testbatterij positief scoort, dan is er een verhoogd risico op een blessure. In je studie neem je bij het begin van het seizoen bij iedereen deze testbatterij af en je volgt alle spelers op gedurende het volledige seizon.</p>
+<p>Als kinesitherapeut binnen een sportclub wil je een preventieprogramma opstarten. Je gaat van slag met het aanmaken van een testbatterij waarin kracht, lenigheid en psychologisch welzijn gemeten wordt. Wanneer de testbatterij positief scoort, dan is er een verhoogd risico op een blessure. In je studie neem je bij het begin van het seizoen bij iedereen deze testbatterij af en je volgt alle spelers op gedurende het volledige seizoen.</p>
 <table>
 <caption>
 <span id="tab:unnamed-chunk-23">Table 4.8: </span>Overzicht van data binnen de sportclub
 </caption>
 <thead>
 <tr>
-<th style="text-align:right;">
-BMI (kg/m2)
+<th style="text-align:left;">
+Testbatterij
 </th>
 <th style="text-align:right;">
-6MWT (meter)
+Blessure
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right;">
-23
+<td style="text-align:left;">
+pos
 </td>
 <td style="text-align:right;">
-120
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-28
-</td>
-<td style="text-align:right;">
-108
+0
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-26
+<td style="text-align:left;">
+pos
 </td>
 <td style="text-align:right;">
-105
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-22
-</td>
-<td style="text-align:right;">
-115
+1
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-31
+<td style="text-align:left;">
+neg
 </td>
 <td style="text-align:right;">
-95
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-95
+0
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-32
+<td style="text-align:left;">
+neg
 </td>
 <td style="text-align:right;">
-82
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-36
-</td>
-<td style="text-align:right;">
-87
+0
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-42
+<td style="text-align:left;">
+neg
 </td>
 <td style="text-align:right;">
-40
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+neg
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+neg
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+neg
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pos
+</td>
+<td style="text-align:right;">
+0
 </td>
 </tr>
 </tbody>
 </table>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Exercise 4.1  </strong></span>Bereken voor de volledige groep sporters wat het risico en odds op het krijgen van een blessure is. Bereken hierna ook de RR en OR voor een blessure bij een positieve testbatterij ten opzicht van een negatieve testbatterij.</p>
+<p><span id="exr:unlabeled-div-20" class="exercise"><strong>Exercise 4.1  </strong></span>Bereken voor de volledige groep sporters wat het risico en odds op het krijgen van een blessure is. Bereken hierna ook de RR en OR voor een blessure bij een positieve testbatterij ten opzicht van een negatieve testbatterij.</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Exercise 4.2  </strong></span>Het verband tussen het oplopen van een blessure en de testbatterij wordt weergegeven aan de hand van volgende formule:
+<p><span id="exr:unlabeled-div-21" class="exercise"><strong>Exercise 4.2  </strong></span>Het verband tussen het oplopen van een blessure en de testbatterij wordt weergegeven aan de hand van volgende formule:
 <span class="math inline">\(odds(p) = exp(-1.609 + 1.609 \times X)\)</span>
 OF: <span class="math inline">\(odds_{blessure} = exp(-1.609 + 1.609 \times Test_+)\)</span>
 Kan je voorspellen wat de kans op een blessure is voor iemand met een negatieve test op basis van het model?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Exercise 4.3  </strong></span>Hoe kan je <span class="math inline">\(\beta_{test_+}\)</span> omzetten naar een OR?</p>
+<p><span id="exr:unlabeled-div-22" class="exercise"><strong>Exercise 4.3  </strong></span>Hoe kan je <span class="math inline">\(\beta_{test_+}\)</span> omzetten naar een OR?</p>
 </div>
 <p>Open SPSS en voeg de data in die in de les gebruikt werd voor het beschrijven van het verband tussen de tevredenheid van kinesitherapeuten over hun honoraria en hun leeftijd. Uiteindelijk zou je volgende dataset moeten hebben ingegeven:</p>
 <div class="figure"><span style="display:block;" id="fig:exspsslog1"></span>
@@ -339,13 +359,13 @@ Figure 4.4: Hercodering binnen SPSS
 </p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Exercise 4.4  </strong></span>Kan je in de output het regressiemodel terugvinden?</p>
+<p><span id="exr:unlabeled-div-23" class="exercise"><strong>Exercise 4.4  </strong></span>Kan je in de output het regressiemodel terugvinden?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Exercise 4.5  </strong></span>Is er een significant verband tussen de leeftijd en de score voor tevredenheid? Waaruit leid je dit af?</p>
+<p><span id="exr:unlabeled-div-24" class="exercise"><strong>Exercise 4.5  </strong></span>Is er een significant verband tussen de leeftijd en de score voor tevredenheid? Waaruit leid je dit af?</p>
 </div>
 <div class="exercise">
-<p><span id="exr:unlabeled-div-26" class="exercise"><strong>Exercise 4.6  </strong></span>Wat valt er op aan het model? Denkl je dat het hier om een valide model gaat? Of zijn er eventuele problemen die we moeten aanpakken? Indien er problemen zijn, kan je dan opmerken waaraan deze problemen kunnen liggen?</p>
+<p><span id="exr:unlabeled-div-25" class="exercise"><strong>Exercise 4.6  </strong></span>Wat valt er op aan het model? Denk je dat het hier om een valide model gaat? Of zijn er eventuele problemen die we moeten aanpakken? Indien er problemen zijn, kan je dan opmerken waaraan deze problemen kunnen liggen?</p>
 </div>
 
 </div>

@@ -6,7 +6,7 @@
 ]{book}
 \title{EBM \& Statistiek III}
 \author{\href{mailto:Robby.DePauw@Ugent.be}{\nolinkurl{Robby.DePauw@Ugent.be}}}
-\date{2021-12-19}
+\date{2022-01-02}
 
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
@@ -723,11 +723,11 @@ Lineaire regressie geeft net als \(\rho\) het lineaire verband weer (in tegenste
 
 \includegraphics{ugent-ebmstatIII_files/figure-latex/unnamed-chunk-8-1.pdf}
 
-Op basis van \(Z\) en \(Y\) uit de \texttt{tevreden}dataset werd volgend regressiemodel geschat:
+Op basis van \(Z\) en \(Y\) uit de \texttt{tevreden} dataset werd volgend regressiemodel geschat:
 
-\(Y = 4.5 + (-0.3)Z\)
+\(Y = 4.2 + 0.3 \times Z\)
 
-\textbf{Interpretatie}: Wanneer we de gemiddelde tevredenheid uitrekenen voor mannen en vrouwen bekomen we volgend resultaat zoals weergegeven in tabel \ref{tab:tevredenmean}. Om tot een numerieke oplossing te komen werden de \texttt{labels} gehercodeerd naar \(0\) voor \(V\) en \(1\) voor \(M\). De waarde van \(\beta_1\) bedraagt nu -0.3, wat het gemiddelde verschil weergeeft tussen mannen en vrouwen voor tevredenheidscore. \(\beta_0\) geeft in dit geval de score weer voor \(Z=0\) (score gegveen door vrouwen).
+\textbf{Interpretatie}: Wanneer we de gemiddelde tevredenheid uitrekenen voor mannen en vrouwen bekomen we volgend resultaat zoals weergegeven in tabel \ref{tab:tevredenmean}. Om tot een numerieke oplossing te komen werden de \texttt{labels} gehercodeerd naar \(0\) voor \(V\) en \(1\) voor \(M\). De waarde van \(\beta_1\) bedraagt nu -0.3, wat het gemiddelde verschil weergeeft tussen mannen en vrouwen voor tevredenheidscore. \(\beta_0\) geeft in dit geval de score weer voor \(Z=0\) (score gegeven door vrouwen).
 
 \begin{table}
 
@@ -755,7 +755,7 @@ Eén van de belangrijste evaluatiecriteria bij een lineair regressiemodel is de 
 
 \includegraphics{ugent-ebmstatIII_files/figure-latex/unnamed-chunk-9-1.pdf}
 
-Om de waarde van de \(X\) variabele in te schatten in het verklaren van \(Y\), kijken we naar de afstand tussen de geschatte regressielijn en de observaties (punten op de grafiek). Wanneer de punten dichter tegen de lijn liggen in vergelijking met een schatting op basis van het algemene gemiddelde \(\bar{Y}\), dan lijkt het dat \(X\) een deel van \(Y\) lijkt te verklaren. Wanneer we \(Y\) willen schatten op basis van de regressielijn, dan duiden we deze schatting aan met \(\hat{Y}\). Zo zal voor \(X = 30\), \(\hat{Y} = 13.6 + (-0.2)30 = 7.6\).
+Om de waarde van de \(X\) variabele in te schatten in het verklaren van \(Y\), kijken we naar de afstand tussen de geschatte regressielijn en de observaties (punten op de grafiek). Wanneer de punten dichter tegen de lijn liggen in vergelijking met een schatting op basis van het algemene gemiddelde \(\bar{Y}\), dan lijkt het dat \(X\) een deel van \(Y\) lijkt te verklaren. Wanneer we \(Y\) willen schatten op basis van de regressielijn, dan duiden we deze schatting aan met \(\hat{Y}\). Zo zal voor \(X = 30\) jaar, \(\hat{Y} = 13.6 + (-0.2)30 = 7.6\).
 
 Het verklaarde deel wordt uitgedrukt als verklaarde variantie. Het becijferen van deze verklaarde variantie gebeurt aan de hand van ANOVA tabellen. Zoals weergegeven in figuur \ref{fig:lmsst} varieert \(Y\) over verschillende waarden. De blauwe bollen geven de observaties weer, terwijl de blauwe horizontale lijn het gemiddelde van \(Y\) weergeeft. De afstand van een observatie (blauwe bol) tot de horizontale lijn, maakt onderdeel uit van de totale variantie. Deze totale variantie wordt ook wel de kwadratensom (Sum of Squares) genoemd. Wiskundig wordt de totale spreiding gedefinieerd als de Total Sum of Squares (SST) ofwel \(\sum ({Y}_i - \bar{Y})^2\). Deze formule geeft aan dat het de som van alle afstanden betreft tussen de blauwe bollen en de blauwe horizontale lijn. Daarnaast hebben we ook de regressielijn of best passende rechte. De afstand van de blauwe bollen tot deze lijn, noemen we de resterende fout van het model of residu (SSE) wat wiskundig \(\sum ({Y}_i - \hat{Y})^2\) word ofwel het verschiul tussen de blauwe bollen en de regressielijn. Tot slot hebben we de verklaarde variantie van het model, welke uitdruk in welke mate het model meer verklaard van de variantie van \(Y\) t.o.v. \(\bar{Y}\). Dit wordt weergegeven door \(\sum (\hat{Y}_i - \bar{Y})^2\).
 
